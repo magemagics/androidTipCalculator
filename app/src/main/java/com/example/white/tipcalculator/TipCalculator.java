@@ -26,9 +26,9 @@ private EditText tipEditText;
 
         billEditText = (EditText) findViewById(R.id.amount_bill);
         tipEditText = (EditText) findViewById(R.id.amount_tip_percent);
-        TextChangeHandler tch = new  TextChangeHandler();
-        billEditText.addTextChangedListener(tch);
-        tipEditText.addTextChangedListener(tch);
+        //TextChangeHandler tch = new  TextChangeHandler();
+        //billEditText.addTextChangedListener(tch);
+        //tipEditText.addTextChangedListener(tch);
 
     }
 
@@ -59,7 +59,7 @@ private EditText tipEditText;
 
         }
 
-
+        //test
     }
 }
  class Calc{
