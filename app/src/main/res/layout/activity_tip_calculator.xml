@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.white.tipcalculator.TipCalculator">
+
+    <TextView
+        android:id="@+id/label_bill"
+        style="@style/LabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/app_name"
+        android:textSize="28sp"
+        android:background="@color/lightGray"
+         />
+
+    <EditText
+        android:padding="10dp"
+        style="@style/InputStyle"
+        android:id="@+id/amount_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/label_bill"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/label_bill"
+        android:layout_marginRight="20dp"
+        android:hint="@string/amount_bill_hint"
+        android:inputType="numberDecimal"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:textColor="@color/darkBlue"
+         />
+
+    <TextView
+        android:id="@+id/label_tip_percent"
+        style="@style/LabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/label_bill"
+        android:layout_alignRight="@+id/label_bill"
+        android:layout_below="@+id/label_bill"
+        android:background="@color/lightGray"
+        android:text="@string/label_tip_percent"
+        android:textSize="28sp"
+         />
+
+    <EditText
+        android:id="@+id/amount_tip_percent"
+        style="@style/InputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignBottom="@+id/label_tip_percent"
+        android:layout_alignRight="@+id/amount_bill"
+        android:layout_toRightOf="@+id/label_tip_percent"
+        android:hint="@string/amount_tip_percent_hint"
+        android:inputType="number"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:textColor="@color/darkBlue"
+         />
+
+<!-- red line -->
+    <view
+        android:id="@+id/red_line"
+        android:layout_below="@id/label_tip_percent"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_alignLeft="@id/label_bill"
+        android:layout_alignRight="@id/amount_bill"
+        android:layout_height="5dip"
+        android:background="#FF00"
+        />
+    <TextView
+        android:id="@+id/label_tip"
+        style="@style/LabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_below="@id/red_line"
+        android:layout_alignLeft="@+id/label_bill"
+        android:layout_alignRight="@+id/label_bill"
+        android:textSize="28sp"
+        android:background="@color/lightGray"
+        android:text="@string/label_tip" />
+    <TextView
+        android:id="@+id/amount_tip"
+        style="@style/OutputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/label_tip"
+        android:layout_alignBottom="@+id/label_tip"
+        android:layout_alignRight="@+id/amount_bill"
+        android:background="@color/lightGreen"
+        android:gravity="center"
+        android:textSize="28sp"
+
+        />
+    <TextView
+        android:id="@+id/label_total"
+        style="@style/LabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_below="@id/label_tip"
+        android:layout_alignLeft="@+id/label_bill"
+        android:layout_alignRight="@+id/label_bill"
+        android:background="@color/lightGray"
+        android:textSize="28sp"
+        android:text="@string/label_total"
+        />
+
+    <TextView
+        android:id="@+id/amount_total"
+        style="@style/OutputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/label_total"
+        android:layout_alignBottom="@+id/label_total"
+        android:layout_alignRight="@+id/amount_bill"
+        android:background="@color/lightGreen"
+        android:gravity="center"
+        android:textSize="28sp"
+
+        />
+
+
+</android.support.constraint.ConstraintLayout>
