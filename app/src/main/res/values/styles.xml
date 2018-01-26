@@ -27,8 +27,6 @@
     <style name="OutputStyle" parent="CenteredTextStyle">
         <item name="android:background">@color/lightGreen</item>
     </style>
-    <style name="ButtonStyle" parent="TextStyle">
-        <item name="android:background">@color/darkGreen</item>
-    </style>
+
 
 </resources>

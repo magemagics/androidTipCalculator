@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,12 +16,12 @@
         android:padding="10dp"
         android:text="@string/app_name"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="16dp" />
+         />
 
     <EditText
         android:id="@+id/amount_bill"
         style="@style/InputStyle"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/label_bill"
@@ -33,8 +33,7 @@
         android:padding="10dp"
         android:textColor="@color/darkBlue"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="226dp" />
+         />
 
     <TextView
         android:id="@+id/label_tip_percent"
@@ -48,12 +47,12 @@
         android:padding="10dp"
         android:text="@string/label_tip_percent"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="424dp" />
+         />
 
     <EditText
         android:id="@+id/amount_tip_percent"
         style="@style/InputStyle"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/label_tip_percent"
@@ -65,18 +64,17 @@
         android:padding="10dp"
         android:textColor="@color/darkBlue"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="121dp" />
+
+         />
 
 <!-- red line -->
     <view
         android:id="@+id/red_line"
-        android:layout_below="@id/label_tip_percent"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_alignLeft="@id/label_bill"
-        android:layout_alignRight="@id/amount_bill"
         android:layout_height="5dip"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/label_tip_percent"
+        android:layout_marginTop="30dp"
         android:background="#FF00"
         />
 
@@ -92,8 +90,7 @@
         android:padding="10dp"
         android:text="@string/label_tip"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="226dp" />
+         />
     <TextView
         android:id="@+id/amount_tip"
         style="@style/OutputStyle"
@@ -114,31 +111,29 @@
         style="@style/LabelStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/label_bill"
-        android:layout_alignRight="@+id/label_bill"
-        android:layout_below="@id/label_tip"
+        android:layout_alignBaseline="@+id/amount_total"
+        android:layout_alignBottom="@+id/amount_total"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/amount_total"
         android:background="@color/lightGray"
         android:padding="10dp"
         android:text="@string/label_total"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="313dp" />
+         />
 
     <TextView
         android:id="@+id/amount_total"
         style="@style/OutputStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/label_total"
-        android:layout_alignRight="@+id/amount_bill"
-        android:layout_toRightOf="@+id/label_total"
+        android:layout_alignEnd="@+id/amount_tip"
+        android:layout_below="@+id/amount_tip"
+        android:layout_toEndOf="@+id/label_tip"
         android:background="@color/lightGreen"
         android:gravity="center"
         android:padding="10dp"
         android:textSize="28sp"
-
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="331dp" />
+         />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

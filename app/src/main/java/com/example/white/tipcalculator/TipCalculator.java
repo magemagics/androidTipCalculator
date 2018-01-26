@@ -1,10 +1,8 @@
 package com.example.white.tipcalculator;
 
-import android.os.Handler;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
@@ -12,7 +10,7 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class TipCalculator extends AppCompatActivity {
-private Calc tipCalc;
+public Calc tipCalc;
 public NumberFormat money = NumberFormat.getCurrencyInstance();
 private EditText billEditText;
 private EditText tipEditText;
@@ -23,9 +21,13 @@ private EditText tipEditText;
         super.onCreate(savedInstanceState);
         tipCalc = new Calc(0.17f, 100.0f);
         setContentView(R.layout.activity_tip_calculator);
-        billEditText = (EditText) findViewById(R.id.amount_bill);
-        tipEditText = (EditText) findViewById(R.id.amount_tip_percent);
+
         handler tch = new handler();
+        billEditText = (EditText) findViewById(R.id.amount_bill);
+
+        tipEditText = (EditText) findViewById(R.id.amount_tip_percent);
+
+
         billEditText.addTextChangedListener(tch);
         tipEditText.addTextChangedListener(tch);
 
@@ -36,7 +38,7 @@ private EditText tipEditText;
         EditText billEditText = (EditText) findViewById(R.id.amount_bill);
         EditText tipEditText = (EditText) findViewById(R.id.amount_tip_percent);
         String billString = billEditText.getText().toString();
-        String tipString = billEditText.getText().toString();
+        String tipString = tipEditText.getText().toString();
         TextView tipTextView = (TextView) findViewById(R.id.amount_tip);
         TextView totalTextView = (TextView) findViewById(R.id.amount_tip);
 
@@ -63,12 +65,12 @@ private EditText tipEditText;
     private class handler implements TextWatcher{
 
         @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
         }
 
         @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        public void onTextChanged(CharSequence s, int start, int before, int after) {
 
         }
 
