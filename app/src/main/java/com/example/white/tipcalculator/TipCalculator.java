@@ -23,17 +23,16 @@ private EditText tipEditText;
         super.onCreate(savedInstanceState);
         tipCalc = new Calc(0.17f, 100.0f);
         setContentView(R.layout.activity_tip_calculator);
-
         billEditText = (EditText) findViewById(R.id.amount_bill);
         tipEditText = (EditText) findViewById(R.id.amount_tip_percent);
-        //TextChangeHandler tch = new  TextChangeHandler();
-        //billEditText.addTextChangedListener(tch);
-        //tipEditText.addTextChangedListener(tch);
+        handler tch = new handler();
+        billEditText.addTextChangedListener(tch);
+        tipEditText.addTextChangedListener(tch);
 
     }
 
-    public void calculate(View v){
-        Log.w("TipCalculator", "v = " + v);
+    public void calculate(){
+
         EditText billEditText = (EditText) findViewById(R.id.amount_bill);
         EditText tipEditText = (EditText) findViewById(R.id.amount_tip_percent);
         String billString = billEditText.getText().toString();
@@ -59,7 +58,24 @@ private EditText tipEditText;
 
         }
 
-        //test
+
+    }
+    private class handler implements TextWatcher{
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable e) {
+            calculate();
+        }
     }
 }
  class Calc{
@@ -99,20 +115,4 @@ private EditText tipEditText;
          return bill + tipAmount();
      }
  }
- class handler implements TextWatcher{
-     Handler h = new Handler();
-     @Override
-     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-     }
-
-     @Override
-     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-     }
-
-     @Override
-     public void afterTextChanged(Editable editable) {
-
-     }
- }
